@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hitung Tabungan Bulanan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+    }
+    input[type="text"], input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    input[type="submit"]:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <form action="raraya.php" method="post" onsubmit="bersihkanFormat()">
+    <h2>Program Tabungan</h2>
+    <label>Besar Tabungan Awal (Rp):</label>
+    <input type="text" id="tabungan_awal" name="tabungan_awal" required>
+
+    <input type="submit" value="Hitung">
+  </form>
+
+  <script>
+    const input = document.getElementById('tabungan_awal');
+
+    input.addEventListener('input', function (e) {
+      // hapus titik lama
+      let value = this.value.replace(/\./g, '');
+      // pastikan hanya angka
+      value = value.replace(/\D/g, '');
+      // format dengan titik setiap 3 digit
+      this.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    });
+
+    function bersihkanFormat() {
+      // sebelum dikirim ke PHP, hapus titik agar terbaca angka murni
+      input.value = input.value.replace(/\./g, '');
+    }
+  </script>
+</body>
+</html>
