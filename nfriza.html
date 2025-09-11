@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hitung Gaji Mingguan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #28a745;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Program Hitung Gaji Pekerja</h2>
+    <form action="nfrizaa.php" method="post">
+      <label>Lama kerja normal (hari):</label>
+      <input type="number" name="hari" value="5" required>
+
+      <label>Jam lembur hari pertama:</label>
+      <input type="number" name="lembur1" value="2" required>
+
+      <label>Jam lembur hari kedua:</label>
+      <input type="number" name="lembur2" value="3" required>
+
+      <input type="submit" value="Hitung Gaji">
+    </form>
+  </div>
+</body>
+</html>
